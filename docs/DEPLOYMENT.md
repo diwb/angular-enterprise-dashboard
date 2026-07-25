@@ -9,4 +9,4 @@ docker run --rm -p 8080:8080 angular-enterprise-dashboard
 
 Direct navigation uses Nginx `try_files` fallback to `index.html`.
 
-Local validation on 2026-07-25 returned HTTP 200 for `/` and `/customers`.
+Local validation on 2026-07-25 used a no-cache Docker build with `npm ci` inside the build stage and returned HTTP 200 for `/` and `/customers`.
