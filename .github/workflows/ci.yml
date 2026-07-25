@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.0'
+          cache: npm
+      - run: npm install -g npm@9.6.7
+      - run: npm install
+      - run: npm run format
+      - run: npm run lint
+      - run: npm run test:coverage -- --watch=false
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run e2e -- --project=chromium
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-artifacts
+          path: |
+            playwright-report
+            test-results
+
+  docker:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t angular-enterprise-dashboard:ci .
+
+  codeql:
+    uses: github/codeql-action/.github/workflows/codeql.yml@v4
+    permissions:
+      contents: read
+      security-events: write
