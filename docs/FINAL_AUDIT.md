@@ -6,16 +6,18 @@ The repository contains a functional Angular 21 enterprise dashboard foundation 
 
 ## Public links
 
-| Item | URL |
-| --- | --- |
-| Repository | https://github.com/diwb/angular-enterprise-dashboard |
-| Published application | Not published from this environment |
-| Workflows | https://github.com/diwb/angular-enterprise-dashboard/actions |
-| Release | Tag pushed at https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0; formal GitHub Release creation still requires a release-capable GitHub tool/API |
+| Item                  | URL                                                                                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Repository            | https://github.com/diwb/angular-enterprise-dashboard                                                                                                                    |
+| Published application | Not published from this environment                                                                                                                                     |
+| Workflows             | https://github.com/diwb/angular-enterprise-dashboard/actions                                                                                                            |
+| Release               | Tag pushed at https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0; formal GitHub Release creation still requires a release-capable GitHub tool/API |
 
 ## Final validated commit
 
-Pending final commit for this remediation pass.
+Validation baseline before the hash-recording documentation commit: `f6b1be25a521b29c5691766c759ce948d970760b`.
+
+The final pushed hash is reported in the closing response after Git creates the last commit.
 
 ## Main decisions
 
@@ -40,18 +42,18 @@ Pending final commit for this remediation pass.
 
 ## Commands executed and results
 
-| Command | Result |
-| --- | --- |
-| `npm ci --ignore-scripts` | Passed |
-| `npm run format` | Passed |
-| `npm run lint` | Passed |
-| `npm run test:coverage -- --watch=false` | Passed: 13 files, 35 tests |
-| `npm run build` | Passed |
-| `npm run e2e:chromium` | Passed: 5 Playwright tests |
-| `npm audit --audit-level=moderate` | 3 moderate dev-tool vulnerabilities; no safe non-force fix available in current Angular 21 line |
-| `npm outdated` | Angular 21 packages are at current wanted versions; latest major is Angular 22 |
-| `docker build --no-cache -t angular-enterprise-dashboard:local .` | Passed with `npm ci` in the Docker build stage |
-| Container `GET /` and `GET /customers` | Passed: HTTP 200 |
+| Command                                                           | Result                                                                                          |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `npm ci --ignore-scripts`                                         | Passed                                                                                          |
+| `npm run format`                                                  | Passed                                                                                          |
+| `npm run lint`                                                    | Passed                                                                                          |
+| `npm run test:coverage -- --watch=false`                          | Passed: 13 files, 35 tests                                                                      |
+| `npm run build`                                                   | Passed                                                                                          |
+| `npm run e2e:chromium`                                            | Passed: 5 Playwright tests                                                                      |
+| `npm audit --audit-level=moderate`                                | 3 moderate dev-tool vulnerabilities; no safe non-force fix available in current Angular 21 line |
+| `npm outdated`                                                    | Angular 21 packages are at current wanted versions; latest major is Angular 22                  |
+| `docker build --no-cache -t angular-enterprise-dashboard:local .` | Passed with `npm ci` in the Docker build stage                                                  |
+| Container `GET /` and `GET /customers`                            | Passed: HTTP 200                                                                                |
 
 ## Versions
 
