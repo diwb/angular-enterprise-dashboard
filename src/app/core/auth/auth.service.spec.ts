@@ -21,4 +21,25 @@ describe('AuthService', () => {
     const service = TestBed.inject(AuthService);
     await expect(service.login('unknown@example.com')).rejects.toThrow();
   });
+
+  it('restores and clears a stored session', async () => {
+    const service = TestBed.inject(AuthService);
+    await service.login('manager@example.com');
+
+    const restored = TestBed.inject(AuthService);
+    expect(restored.user()?.email).toBe('manager@example.com');
+
+    restored.logout();
+    expect(restored.isAuthenticated()).toBe(false);
+    expect(localStorage.getItem('aed.session')).toBeNull();
+  });
+
+  it('reports permissions and role labels by user role', async () => {
+    const service = TestBed.inject(AuthService);
+    await service.login('analyst@example.com');
+
+    expect(service.can('payments:read')).toBe(true);
+    expect(service.can('users:read')).toBe(false);
+    expect(service.roleLabel()).toBe('Analyst');
+  });
 });

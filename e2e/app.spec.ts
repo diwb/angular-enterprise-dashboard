@@ -47,3 +47,15 @@ test('logout returns to login', async ({ page }) => {
     page.getByRole('heading', { name: 'Sign in to Enterprise Operations' }),
   ).toBeVisible();
 });
+
+test('mobile viewport keeps protected dashboard navigation usable', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/login');
+  await page.getByRole('button', { name: 'Sign in' }).click();
+
+  await expect(
+    page.getByRole('heading', { name: 'Commercial operations dashboard' }),
+  ).toBeVisible();
+  await page.getByRole('button', { name: 'Toggle navigation' }).click();
+  await expect(page.getByRole('link', { name: /Customers/ })).toBeVisible();
+});
