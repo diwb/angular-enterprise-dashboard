@@ -9,13 +9,16 @@ The repository contains a functional Angular 21 enterprise dashboard foundation 
 | Item                  | URL                                                                                                                                                                     |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Repository            | https://github.com/diwb/angular-enterprise-dashboard                                                                                                                    |
-| Published application | Not published from this environment                                                                                                                                     |
+| Published application | https://diwb.github.io/angular-enterprise-dashboard/                                                                                                                    |
 | Workflows             | https://github.com/diwb/angular-enterprise-dashboard/actions                                                                                                            |
-| Release               | Tag pushed at https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0; formal GitHub Release creation still requires a release-capable GitHub tool/API |
+| CI workflow           | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881561                                                                                           |
+| CodeQL workflow       | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881518                                                                                           |
+| Pages workflow        | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881525                                                                                           |
+| Release               | https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0                                                                                                |
 
 ## Final validated commit
 
-Validation baseline before the hash-recording documentation commit: `f6b1be25a521b29c5691766c759ce948d970760b`.
+Publication workflow baseline before the final audit-link documentation commit: `8f894ea55965c876249866a69194809e923972d8`.
 
 The final pushed hash is reported in the closing response after Git creates the last commit.
 
@@ -129,10 +132,16 @@ Docker is deterministic again:
 
 ## CI/CD and GitHub
 
-- Repository exists and `main` has been pushed.
+- Repository exists at https://github.com/diwb/angular-enterprise-dashboard with `main` confirmed as the default branch.
+- Repository description and topics are configured.
+- Repository homepage is configured as https://diwb.github.io/angular-enterprise-dashboard/.
+- GitHub Pages is configured with workflow deployment and HTTPS enforced.
+- Published dashboard URL: https://diwb.github.io/angular-enterprise-dashboard/.
 - Git tag `v1.0.0` has been pushed.
-- GitHub Actions workflow, Docker build job, Dependabot, CodeQL workflow reference, issue templates, PR template and CODEOWNERS are present.
-- Remote workflow execution, repository topics/description/homepage, GitHub Pages deployment and formal Release creation are not fully automatable with the tools currently exposed here. The local `gh` CLI is not installed, and the GitHub connector exposed repository/file/branch operations but not release, repository settings, Pages, or Actions log control.
+- Formal GitHub Release `v1.0.0` is published at https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0.
+- CI workflow completed successfully: https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881561.
+- CodeQL workflow completed successfully: https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881518.
+- GitHub Pages workflow completed successfully: https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881525.
 
 ## Screenshots
 
@@ -146,7 +155,4 @@ Real screenshots generated under `docs/images/`:
 
 ## Remaining external blockers
 
-- Formal GitHub Release object for `v1.0.0`.
-- Repository description, topics, default branch confirmation and homepage configuration through repository settings API.
-- Hosted demo URL / GitHub Pages deployment validation.
-- Remote CI/CodeQL observation and remediation if the hosted runners differ from local validation.
+No remaining external publication blockers are known. The GitHub repository, metadata, homepage, Pages deployment, CI, CodeQL and formal Release are configured and validated.
