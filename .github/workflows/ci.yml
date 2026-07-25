@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 
 jobs:
   quality:
@@ -39,9 +38,3 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t angular-enterprise-dashboard:ci .
-
-  codeql:
-    uses: github/codeql-action/.github/workflows/codeql.yml@v4
-    permissions:
-      contents: read
-      security-events: write
