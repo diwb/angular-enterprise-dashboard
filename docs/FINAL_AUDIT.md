@@ -6,15 +6,15 @@ The repository contains a functional Angular 21 enterprise dashboard foundation 
 
 ## Public links
 
-| Item                  | URL                                                                                                                                                                     |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Repository            | https://github.com/diwb/angular-enterprise-dashboard                                                                                                                    |
-| Published application | https://diwb.github.io/angular-enterprise-dashboard/                                                                                                                    |
-| Workflows             | https://github.com/diwb/angular-enterprise-dashboard/actions                                                                                                            |
-| CI workflow           | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881561                                                                                           |
-| CodeQL workflow       | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881518                                                                                           |
-| Pages workflow        | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881525                                                                                           |
-| Release               | https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0                                                                                                |
+| Item                  | URL                                                                           |
+| --------------------- | ----------------------------------------------------------------------------- |
+| Repository            | https://github.com/diwb/angular-enterprise-dashboard                          |
+| Published application | https://diwb.github.io/angular-enterprise-dashboard/                          |
+| Workflows             | https://github.com/diwb/angular-enterprise-dashboard/actions                  |
+| CI workflow           | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881561 |
+| CodeQL workflow       | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881518 |
+| Pages workflow        | https://github.com/diwb/angular-enterprise-dashboard/actions/runs/30177881525 |
+| Release               | https://github.com/diwb/angular-enterprise-dashboard/releases/tag/v1.0.0      |
 
 ## Final validated commit
 
