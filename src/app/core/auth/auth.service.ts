@@ -37,7 +37,7 @@ export class AuthService {
   logout(): void {
     this.sessionState.set(null);
     localStorage.removeItem(storageKey);
-    void this.router.navigateByUrl('/login');
+    void this.router.navigateByUrl('/login').catch(() => undefined);
   }
 
   can(permission: Permission): boolean {

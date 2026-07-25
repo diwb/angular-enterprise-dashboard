@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { DemoRepositoryService } from '../../core/data/demo-repository.service';
@@ -112,7 +112,7 @@ import { Customer, PageResult } from '../../shared/models/enterprise.models';
 export class CustomersPageComponent {
   readonly result = signal<PageResult<Customer> | null>(null);
   readonly saving = signal(false);
-  readonly editing = computed(() => Boolean(this.form.controls.id.value));
+  readonly editing = () => Boolean(this.form.controls.id.value);
   readonly filters = new FormGroup({
     search: new FormControl('', { nonNullable: true }),
     status: new FormControl('', { nonNullable: true }),
@@ -165,7 +165,7 @@ export class CustomersPageComponent {
       lifetimeValue: 0,
       createdAt: new Date().toISOString(),
     });
-    this.form.reset({
+    this.form.setValue({
       id: '',
       companyName: '',
       contactName: '',
