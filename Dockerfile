@@ -1,7 +1,7 @@
 FROM node:22.22.0-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@9.6.7 && npm install
+RUN npm install -g npm@9.6.7 && npm ci
 COPY . .
 RUN npm run build
 
