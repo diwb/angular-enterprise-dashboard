@@ -26,7 +26,7 @@ jobs:
       - run: npm install -g npm@9.6.7
       - run: npm ci
       - run: npm run build -- --base-href /angular-enterprise-dashboard/
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/angular-enterprise-dashboard/browser
 
